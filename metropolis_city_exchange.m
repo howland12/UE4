@@ -32,7 +32,7 @@ function[town_distribution, energy_diff] = metropolis_city_exchange(town_distrib
     metrop_prob = exp( (-1/temperature) *  energy_diff );
                        
     rand_check = rand(1,1);
-    if (metrop_prob >= 1) || (metrop_prob >= rand_check)                
+    if (metrop_prob >= 1) || (metrop_prob > rand_check)                
         town_distribution = proposed_town_distribution;
     else
         energy_diff = 0;

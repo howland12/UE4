@@ -6,6 +6,7 @@ function [town_distribution, E_mean, E_var, E_min] = sweep (town_distribution, t
     
         [town_distribution, delta_E] = metropolis_city_exchange(town_distribution, temperature);
         energy(i+1) = energy(i) + delta_E;
+        
     end
     
     E_mean = mean(energy);

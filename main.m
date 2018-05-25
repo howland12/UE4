@@ -1,4 +1,4 @@
-clear all;
+clearvars;
 close all;
 clc;
 
@@ -14,7 +14,7 @@ E_start = get_path_energy(town_distribution);
 %---------------- optimization parameters ---------------------------------
 temperature_start = 1;
 N_cooling_steps = 1e2;
-q = 1;
+q = 0.98;
 enable_plot = true;
 
 
@@ -46,6 +46,7 @@ if plot_over_temperature
     plot(temperature_vec, E_mean_vec - E_min_vec);
     xlabel('temperature');
     ylabel('<E> - min(E)');
+    
 end
 
 if plot_over_t_sweeps
@@ -69,7 +70,7 @@ if plot_over_t_sweeps
 
 
     figure();
-    plot(1:length(temperature_vec), E_mean_vec - E_min_vec);
+    semilogy(1:length(temperature_vec), E_mean_vec - E_min_vec);
     xlabel('sweep');
     ylabel('<E> - min(E)');
 end
