@@ -4,7 +4,7 @@ clc;
 
 nof_towns = 50;
 seed = 62;
-plot_over_temperature = true;
+plot_over_temperature = false;
 plot_over_t_sweeps = true;
 
 town_distribution = generate_town_distrbution(nof_towns, seed);
